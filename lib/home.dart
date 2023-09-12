@@ -1,3 +1,5 @@
+import 'package:calc/set_item.dart';
+import 'package:calc/single_item.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -69,7 +71,7 @@ class Home extends StatelessWidget {
               height: 30,
             ),
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: const EdgeInsets.all(10),
               child: Container(
                 height: 35,
                 width: 370,
@@ -77,11 +79,9 @@ class Home extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 decoration: const BoxDecoration(
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(8),
-                        topRight: Radius.circular(8),
-                        bottomLeft: Radius.circular(8),
-                        bottomRight: Radius.circular(8)),
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(8),
+                    ),
                     color: Colors.amberAccent),
                 child: const Text(
                   "Total amount  :",
@@ -98,6 +98,52 @@ class Home extends StatelessWidget {
                       fontWeight: FontWeight.w800,
                       fontSize: 20)),
             ),
+            const SizedBox(
+              height: 19,
+            ),
+            SizedBox(
+              height: 150,
+              child: ListView.separated(
+                  padding: const EdgeInsets.only(
+                    left: 20,
+                  ),
+                  shrinkWrap: true,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => const SetItem(),
+                  separatorBuilder: (context, index) => const SizedBox(
+                        width: 10,
+                      ),
+                  itemCount: 5),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text("Single piece",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20)),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 150,
+              child: ListView.separated(
+                padding: const EdgeInsets.only(
+                  left: 20,
+                ),
+                shrinkWrap: true,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => const SingleItem(),
+                separatorBuilder: (context, index) => const SizedBox(
+                  width: 10,
+                ),
+                itemCount: 5,
+              ),
+            )
           ],
         ));
   }
