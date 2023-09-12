@@ -19,6 +19,7 @@ class Home extends StatelessWidget {
           elevation: 0,
         ),
         body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Padding(
               padding: const EdgeInsets.all(20),
@@ -67,24 +68,36 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            Container(
-              height: 35,
-              width: 370,
-              alignment: Alignment.centerLeft,
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-              decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(8),
-                      topRight: Radius.circular(8),
-                      bottomLeft: Radius.circular(8),
-                      bottomRight: Radius.circular(8)),
-                  color: Colors.amberAccent),
-              child: const Text(
-                "Total amount  :",
-                style:
-                    TextStyle(color: Colors.black, fontWeight: FontWeight.w800),
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Container(
+                height: 35,
+                width: 370,
+                alignment: Alignment.centerLeft,
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(8),
+                        topRight: Radius.circular(8),
+                        bottomLeft: Radius.circular(8),
+                        bottomRight: Radius.circular(8)),
+                    color: Colors.amberAccent),
+                child: const Text(
+                  "Total amount  :",
+                  style: TextStyle(
+                      color: Colors.black, fontWeight: FontWeight.w800),
+                ),
               ),
-            )
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text("Sets",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.w800,
+                      fontSize: 20)),
+            ),
           ],
         ));
   }
